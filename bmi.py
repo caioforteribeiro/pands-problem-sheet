@@ -11,4 +11,4 @@ weight = int(input("Now enter your weight in kilograms: "))
 bmi = weight/((height/100)**2)
 
 #Prints results
-print("Your BMI is "+ str(bmi))
+print("Your BMI is "+ str(round(bmi,2))) #Round function to display only 2 decimals
