@@ -1,4 +1,4 @@
-# Problem sheet (Weeekly Assignments)
+# Problem sheet (Weekly Assignments)
 
 For reference on how to format README GitHub documents (*.md):
 [Basic writing and formatting syntax](https://docs.github.com/en/github/writing-on-github/basic-writing-and-formatting-syntax), GitHub Docs. Access on 19 Feb, 2021.
