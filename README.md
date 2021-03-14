@@ -127,12 +127,71 @@ As the final step, the program prints out the resulting list, from the user's in
 ## Week 05
 
 ### Task
+Write a program (**weekday.py**) that checks the current date is a weekday or not.
 
+### Code
+```python
+import datetime
+
+date = datetime.datetime.today().weekday()
+
+if date < 5:
+    print("Yes, unfortunately today is a weekday...")
+
+else:
+    print("Yay, it's weekend!")
+
+```
+
+### Notes & Comments
+First we needed to import the `datetime` module, which allows us to operate more easily with dates and times. The method `datetime.today()` extracts the current date, and the `date.weekday()` method returns an integer that maps the day of the week, starting on 0 (Monday) all the way  to 6 (Sunday). To check if the current date is a weekday, we simply concatenate the 2 methods, store it in a variable `date`, and see if it's less than 5 (which means, from 0 to 4, or from Monday to Friday). If so, the program prints that it's a weekday. If not (i.e. if it's 5 or 6), the program prints that it's weekend. 
+
+### References
+- **Weekday() Method Of Datetime Class In Python:** [Pythonic](https://pythontic.com/datetime/datetime/weekday). Access on 14 March, 2021.
+- **datetime — Basic date and time types:** [The Python Standard Library](https://docs.python.org/3/library/datetime.html). Access on 14 March, 2021.
+- **How do I get the day of week given a date?:** [Stack Overflow](https://stackoverflow.com/questions/9847213/how-do-i-get-the-day-of-week-given-a-date). Access on 14 March, 2021.
+
+
+
+## Week 06
+
+### Task
 
 ### Code
 
-
 ### Notes & Comments
 
+### References
+
+
+
+## Week 07
+
+### Task
+Write a program (**es.py**) that reads a text file (.txt) and prints out how many times the character 'e' appears in it.
+
+### Code
+```python
+import sys
+
+filename = sys.argv[1]
+
+with open(filename, "rt") as f:
+    content = f.read()
+
+print(content.count("e"))
+
+```
+
+### Notes & Coments
+The program starts by importing the `sys` module, so we're able to fetch arguments from the command line. Then, we store the 2nd argument of the command line into a variable `filename`, using `sys.argv`. The program opens the file in read mode and the resulting string is stored into `content`. To print out the number of e's, then, we can simply use the string method `count()`.
 
 ### References
+- **Getting an argument from te command line:**
+  - Nandan Kumar, [How to use sys.argv in Python](https://www.knowledgehut.com/blog/programming/sys-argv-python-examples), Knowledge Hut. Access on 14 March, 2021.
+  - [sys — System-specific parameters and functions](https://docs.python.org/3/library/sys.html), The Python Standard Library. Access on 14 March, 2021.
+- **Handling files in Python:**  
+  - Vuyisile Ndlovu, [Working With Files in Python](https://realpython.com/working-with-files-in-python/), Real Python. Access on 14 March, 2021.
+  - [Python File Handling](https://www.w3schools.com/python/python_file_handling.asp), W3 Schools. Access on 14 March, 2021.
+- **f.read() returning a string in *text* mode:** [The Python Tutorial - Input and Output](https://docs.python.org/3/tutorial/inputoutput.html#methods-of-file-objects), Python.org. Access on 14 March, 2021.
+- **The count() method:**: [Python - String Methods](https://www.w3schools.com/python/python_strings_methods.asp), W3 Schools. Access on 14 March, 2021.
