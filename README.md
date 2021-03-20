@@ -184,10 +184,10 @@ print(content.count("e"))
 ```
 
 ### Notes & Coments
-The program starts by importing the `sys` module, so we're able to fetch arguments from the command line. Then, we store the 2nd argument of the command line into a variable `filename`, using `sys.argv`. The program opens the file in read mode and the resulting string is stored into `content`. To print out the number of e's, then, we can simply use the string method `count()`.
+The program starts by importing the `sys` module, so we're able to fetch arguments from the command line. Then, we store the 2nd argument of the command line into a variable `filename`, using `sys.argv`. The program opens the file in read mode and the resulting string is stored into `content` (we can test it using the `type()` function). To print out the number of e's, then, we can simply use the string method `count()`.
 
 ### References
-- **Getting an argument from te command line:**
+- **Getting an argument from the command line:**
   - Nandan Kumar, [How to use sys.argv in Python](https://www.knowledgehut.com/blog/programming/sys-argv-python-examples), Knowledge Hut. Access on 14 March, 2021.
   - [sys — System-specific parameters and functions](https://docs.python.org/3/library/sys.html), The Python Standard Library. Access on 14 March, 2021.
 - **Handling files in Python:**  
@@ -195,3 +195,67 @@ The program starts by importing the `sys` module, so we're able to fetch argumen
   - [Python File Handling](https://www.w3schools.com/python/python_file_handling.asp), W3 Schools. Access on 14 March, 2021.
 - **f.read() returning a string in *text* mode:** [The Python Tutorial - Input and Output](https://docs.python.org/3/tutorial/inputoutput.html#methods-of-file-objects), Python.org. Access on 14 March, 2021.
 - **The count() method:**: [Python - String Methods](https://www.w3schools.com/python/python_strings_methods.asp), W3 Schools. Access on 14 March, 2021.
+
+
+## Week 08
+
+### Task
+Write a program (**plottask.py**) that plots the following functions in the range [0, 4]:
+f(x) = x
+g(x) = x^2
+h(x) = x^3
+The plots must use the same set of axis.
+
+### Code
+```python
+import numpy as np
+import matplotlib.pyplot as plt
+
+x = np.array([0, 1, 2, 3, 4])
+f = x
+g = x**2
+h = x**3
+
+fontTitle = {"family": "calibri", 
+             "color" : "#342e2e", 
+             "size": "18"
+             }
+
+fontAxis = {"family": "calibri",
+            "color" : "#342e2e", 
+            "size": "12"
+            }
+
+plt.rcParams["axes.facecolor"] = "#f5f5f5"
+plt.rcParams["lines.linewidth"] = 3
+plt.rcParams["figure.facecolor"] = "#f5f5f5"
+
+plt.title("Plots", fontdict = fontTitle)
+plt.xlabel("x", fontdict = fontAxis) 
+plt.ylabel("Functions", fontdict = fontAxis)
+
+plt.plot(x, f, color = "#58508d", label = "$f(x) = x$")
+plt.plot(x, g, color = "#ff6361", label = "$g(x) = x^{2}$")
+plt.plot(x, h, color = "#ffa600", label = "$h(x) = x^{3}$")
+
+plt.legend()
+plt.grid()
+plt.show()
+```
+
+### Notes & Comments
+We start the program by importing the `numpy` module, so we can operate with our variable `x` as an array within a fixed range (from 0 to 4), and `matplotlib.pyplot`, to plot our functions.
+`x` is defined used the `array` funtion of `np`. We can then call the values for the y-axis as dependent of `x`.
+The remainder of the code is all about customising and displaying the plotting, by changing colours, line width, defining labels, adding a legend, a title and a grid. For this program, we chose to configure our customisations directly in the script by using `plt.rcParam`, instead of having a separate style sheet for that.
+
+
+### References
+- [NumPy Creating Arrays](https://www.w3schools.com/python/numpy_creating_arrays.asp), W3 Schools. Access on 20 March, 2021.
+- Matplotlib rcParams: [Customizing Matplotlib with style sheets and rcParams](https://matplotlib.org/stable/tutorials/introductory/customizing.html), Matplotlib.org. Access on 20 March, 2021.
+- Customising text and labels: [Controlling style of text and labels using a dictionary](https://matplotlib.org/stable/gallery/text_labels_and_annotations/text_fontdict.html), M.org. Access on 20 March, 2021.
+- [Changing fonts in matplotlib](https://stackoverflow.com/questions/45877746/changing-fonts-in-matplotlib), Stack Overflow. Access on 20 March, 2021.
+- [Matplotlib Adding Grid Lines](https://www.w3schools.com/python/matplotlib_grid.asp), W3 Schools. Access on 20 March, 2021.
+- Colour palette source for lines: [Data Color Picker](https://learnui.design/tools/data-color-picker.html#palette), Learn UI Design. Access on 20 March, 2021.
+- HEX codes for background and font colours:
+  - [White Smoke](https://www.eggradients.com/color/white-smoke-color), Eggradients. Access on 20 March, 2021.
+  - [Mine Shaft](https://www.eggradients.com/shades-of-black-color), Eggradients. Access on 20 March, 2021.
