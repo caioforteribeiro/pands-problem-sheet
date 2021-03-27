@@ -156,13 +156,47 @@ First we needed to import the `datetime` module, which allows us to operate more
 ## Week 06
 
 ### Task
+Write a program (**squareroot.py**) that returns an approximation of the square root of a positive float number, without using built-in functions.
 
 ### Code
+```python
+def sqrt (n, precision):
+    x = n 
+
+    while (float(n > 0)) :    
+        root = 0.5 * (x + (n / x))          
+        
+        if abs(root - x) < precision:
+            break 
+        
+        x = root
+    
+    return root
+
+num = float(input("Enter a positive number: "))
+
+while num <= 0:
+    num = float(input("Enter a positive number: "))
+
+rootNum = round(sqrt(num, 0.001), 1)
+
+print("The squareroot of {} is approximately {}" .format(num,rootNum))
+
+```
 
 ### Notes & Comments
+We start the program by defining a function `sqrt`, which takes two arguments: `n` (the number to be rooted), and `precision` (the degree of precision for an approximation of the result using the Newton's method - the smallest the number for this argument, the higher the precision and the better the approximation). The function calculates 'guesses' (`x`) that are ever closer to the actual root until it reaches the desired precision, measured as the difference between the actual root and the different guesses. The formula for the calculation is known as the Newton's method, which is a method for guessing approximations of the actual root of a given number. If we don't define the precision (or a limit to how accurate we want the result to be), the program runs indefinitely.
+
+After defining the function,  we apply it to num (which is a float number input by the user). Negative inputs are rejected using a `while` loop until the user enters a positive number. As our results will be round to only 1 decimal, setting a precision of 0.001 is enough (setting a lower precision might lead to wrong results for numbers between 0 and 1, like 0.1 or 0.5 - our assumption was that the numbers should be positive, not necessarily higher than 1). Finally, the program prints out the result. 
 
 ### References
-
+- [Newton's Method](https://en.wikipedia.org/wiki/Newton%27s_method), Wikipedia. Access on 27 March, 2021.
+- ["Simplified" Newton method of finding roots](https://math.stackexchange.com/questions/2278545/simplified-newton-method-of-finding-roots), Stack Exchange. Access on 27 March, 2021.
+- Jerry L. Kazdan, [Finding Square Roots Using Newton’s Method](https://www2.math.upenn.edu/~kazdan/202F09/sqrt.pdf), University of Pennsylvania. Access on 27 March, 2021.
+- [Python Functions](https://www.w3schools.com/python/python_functions.asp), W3 Schools. Access on 27 March, 2021.
+- **Newton´s Method using Python:**
+  - [Newton's Method](https://www.math.ubc.ca/~pwalls/math-python/roots-optimization/newton/), Mathematical Python. Access on 27 March, 2021.
+  - [Find root of a number using Newton’s method](https://www.geeksforgeeks.org/find-root-of-a-number-using-newtons-method), Geeks for Geeks. Access on 27 March, 2021.
 
 
 ## Week 07

@@ -2,7 +2,7 @@
 #f(x) = x
 #g(x) = x**2
 #h(x) = x**3
-#The plots must use the same set of axis
+#The plots must use the same set of axes
 #Author: Caio Forte Ribeiro
 
 import numpy as np
