@@ -20,12 +20,12 @@ h = x**3
 #Color palette source: https://learnui.design/tools/data-color-picker.html#palette
 fontTitle = {"family": "calibri", 
              "color" : "#342e2e", 
-             "size": "18"
+             "size": "32"
              }
 
 fontAxis = {"family": "calibri",
             "color" : "#342e2e", 
-            "size": "12"
+            "size": "20"
             }
 
 #Customise background colour and width of line
